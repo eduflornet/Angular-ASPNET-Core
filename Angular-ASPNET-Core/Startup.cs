@@ -1,6 +1,8 @@
+using Angular_ASPNET_Core.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,11 @@ namespace Angular_ASPNET_Core
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
+            });
+
+            //Add SQL Server support
+            services.AddDbContext<CustomersDbContext>(options => {
+            options.UseSqlServer(Configuration.GetConnectionString("CustomersSqlServerConnectionString"));
             });
         }
 
