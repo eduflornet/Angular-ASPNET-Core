@@ -8,3 +8,5 @@ The tools used are:
 ### Entity Framework Core
 
 ### Swashbuckle
+
+### Angular
