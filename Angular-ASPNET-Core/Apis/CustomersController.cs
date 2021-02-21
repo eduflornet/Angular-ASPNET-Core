@@ -73,7 +73,7 @@ namespace Angular_ASPNET_Core.Apis
             try
             {
                 var customer = await _CustomersRepository.GetCustomerAsync(id);
-                return Ok(_Mapper.Map<CustomerModel[]>(customer));
+                return Ok(_Mapper.Map<CustomerModel>(customer));
             }
             catch (Exception exp)
             {
