@@ -7,6 +7,7 @@ import { CustomerEditComponent } from './customers/customer-edit.component';
 import { CustomerEditReactiveComponent } from './customers/customer-edit-reactive.component';
 
 const routes: Routes = [
+  { path: '', component: CustomersComponent, pathMatch: 'full' },
   { path: 'customers', component: CustomersComponent},
   //{ path: 'customers/:id', component: CustomerEditComponent},
   { path: 'customers/:id', component: CustomerEditReactiveComponent },
